@@ -1,0 +1,8 @@
+UBC EECE 281 - Project 1 2014
+
+This project automates a soldering reflow iron by controlling it with a Altera DE2 board running a 8051 emulator (in a FPGA).
+
+A MPC3004 ADC is used along with a BJT, a SSC connected to the oven and a LM335 (to measure the reference temp) along with a thermocouple (to measure the oven temp)
+
+We modeled the code after a Mealy state machine for code clarity and best practices.
+
