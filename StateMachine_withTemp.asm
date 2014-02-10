@@ -807,20 +807,16 @@ StoreReflowTemp_E:
 	ljmp StoreReflowTemp
 	
 ReadTemp:
-	mov bcd+5, #0
-	mov bcd+4, #0
 	clr is_neg
 	clr mf
 	
-	lcall readRef
-	
-	;lcall readRef; Get reference temp and store in 'ref_temp' 4-byte register
+	lcall readRef; Get reference temp and store in 'ref_temp' 4-byte register
 	
 	mov b, #0 ; read channel 0
 	lcall Read_ADC_Channel
 	
-	mov x+1, R7
 	mov x+0, R6
+	mov x+1, R7
 	mov x+2, #0
 	mov x+3, #0
 	load_y(3125)
@@ -833,6 +829,7 @@ ReadTemp:
 	mov y+2, ref_temp+3
 	mov y+3, ref_temp+4
 	lcall add32
+	
 ;   Test for powering the oven (using the SSC)
 	mov test, #70
 	clr c
