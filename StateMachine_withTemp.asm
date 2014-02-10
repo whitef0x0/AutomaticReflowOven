@@ -379,12 +379,13 @@ StateZero:
 	mov seconds, #00H
 	mov minutes, #00H
 	
-	mov bcd+0, #0
-	mov bcd+1, #0
-	mov bcd+2, #0
-	mov bcd+3, #0
-	mov bcd+4, #0
-	mov bcd+5, #0
+	clr A
+	mov bcd+0, A
+	mov bcd+1, A
+	mov bcd+2, A
+	mov bcd+3, A
+	mov bcd+4, A
+	mov bcd+5, A
 	
 	setb CE_ADC
 
